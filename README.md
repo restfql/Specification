@@ -1,7 +1,7 @@
 # RestFQL Specification
 
-Version: 1
-Date: 2023/03/13
+Version: 2
+Date: 2023/04/06
 
 ## Overview
 
@@ -27,6 +27,6 @@ To achieve the goals expressed before the taken approach is the use of a query l
 
 The producer will interpret this parameter and intercept the response and filter the fields requested in the fql query parameter.
 
-
-
-
+For the response the client will recieve, the next cases are posible:
+- all fql gql parameters are available in the response: the server will return a 200 (OK) status code and the body will contain the filtered response body.
+- A subset or none of the fql gql parameters are available: the server will return a 206 (Partial Conten) status code and the body will contain the filtered response body.
